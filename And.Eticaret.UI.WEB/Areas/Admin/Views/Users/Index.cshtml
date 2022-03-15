@@ -1,0 +1,150 @@
+﻿@model IEnumerable<And.Eticaret.Core.Model.Entity.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2>Üyeler</h2>
+<br />
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <tr>
+            <th>
+                Adı
+                @*@Html.DisplayNameFor(model => model.Name)*@
+            </th>
+            <th>
+                Soyadı
+                @*@Html.DisplayNameFor(model => model.LastName)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                Telefon Numarası
+                @*@Html.DisplayNameFor(model => model.Telephone)*@
+            </th>
+            <th>
+                Şifre
+                @*@Html.DisplayNameFor(model => model.Password)*@
+            </th>
+            <th>
+                TCKimlikNumarası
+                @*@Html.DisplayNameFor(model => model.TCKN)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAdmin)
+            </th>
+            <th>
+                Oluşturulma Tarihi
+                @*@Html.DisplayNameFor(model => model.CreateDate)*@
+            </th>
+            <th>
+                Oluşturan Kullanıcı Id
+                @*@Html.DisplayNameFor(model => model.CreateUserID)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateUserID)
+            </th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+            <th>Sil</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telephone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TCKN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAdmin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateUserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateUserID)
+                </td>
+                <td>
+                    @Html.ActionLink(" Güncelle", "Edit", new { id = item.ID }, new { @class = "btn btn-default fas fa-edit   guncellemebuton", style = "border: 2px solid green;" }) 
+                </td>  
+                <td>
+                    @Html.ActionLink(" Detay", "Details", new { id = item.ID }, new { @class = "btn  btn-default fas fa-info detaylamabuton", style = "border: 2px solid #39ded8;" })
+                </td>  
+                <td>
+                    @Html.ActionLink(" Sil", "Delete", new { id = item.ID }, new { @class = "btn btn-default fas fa-trash-alt silmebuton", style = "border: 2px solid red;" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+        color: #00ff21;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #851111; 
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s; 
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c; 
+            color: white;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red; 
+            color: white;
+        }
+</style>

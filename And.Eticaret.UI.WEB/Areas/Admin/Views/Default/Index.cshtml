@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    var user=Session["AdminLoginUser"] as And.Eticaret.Core.Model.Entity.User;
+}
+
+
+    <h2 style="font-size:42px;color:rgba(29, 10, 10, 0.7);margin-left:15px">Sayın @user.Name @user.LastName Yönetici Paneline Hoşgeldiniz</h2>
+    <br /><br />
+    <ul>
+        <li style=" list-style-type: none;">
+            <a href="/Admin/Users" class="fas fa-address-card" style="text-decoration: none;font-size:22px"> Üyeler Yönetimi</a>
+        </li>
+        <br />
+        <br />
+        <div class="row"></div>
+        <li style=" list-style-type: none;">
+            <a href="/Admin/Products" class="fas fa-store-alt " style="text-decoration: none;font-size:22px"> Ürün Yönetimi</a>
+        </li>
+        <br />
+        <br />
+        <div class="row"></div>
+        <li style=" list-style-type: none;">
+            <a href="/Admin/Categories" class=" fas fa-tasks " style="text-decoration: none;font-size:22px"> Kategori Yönetimi</a>
+        </li>
+        <br />
+        <br />
+        <div class="row"></div>
+        <li style=" list-style-type: none;">
+            <a href="/Admin/AdminOrders" class="  fa fa-shopping-basket " style="text-decoration: none;font-size:22px"> Sipariş Yönetimi</a>
+        </li>
+        <br />
+        <br />
+        <div class="row"></div>
+        <li style=" list-style-type: none;">
+            @Html.ActionLink(" Oturum Kapat", "Cikis", new { }, new { @class = " fa fa-sign-out-alt ", style = " text-decoration: none;font-size:22px" })
+        </li>
+        <br />
+
+    </ul>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

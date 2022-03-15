@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ali Ticaret</title>
+
+
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/90ba0f5d4d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    <!--<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://kit.fontawesome.com/90ba0f5d4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    @*<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">*@
+    <!--<script src="~/Scripts/modernizr-2.8.3.js"></script>-->
+    <style>
+        #deneme img {
+            width: 100%;
+            height: 450px;
+        }
+    </style>
+
+</head>
+<body class="bodyarkaplan" style="background-color:rgba(238, 238, 238, 0.8);">
+
+    <div id="deneme" class="carousel slide  " data-ride="carousel" style="margin-top:-50px">
+
+        <ul class="carousel-indicators">
+            <li data-target="#deneme" data-slide-to="0" class="active"></li>
+            <li data-target="#deneme" data-slide-to="1"></li>
+            <li data-target="#deneme" data-slide-to="2"></li>
+            <li data-target="#deneme" data-slide-to="3"></li>
+            <li data-target="#deneme" data-slide-to="4"></li>
+            <li data-target="#deneme" data-slide-to="5"></li>
+            <li data-target="#deneme" data-slide-to="6"></li>
+            <li data-target="#deneme" data-slide-to="7"></li>
+            <li data-target="#deneme" data-slide-to="8"></li>
+            <li data-target="#deneme" data-slide-to="9"></li>
+            <li data-target="#deneme" data-slide-to="10"></li>
+            <li data-target="#deneme" data-slide-to="11"></li>
+            <li data-target="#deneme" data-slide-to="12"></li>
+            <li data-target="#deneme" data-slide-to="13"></li>
+
+
+        </ul>
+
+        <div class="carousel-inner">
+
+            @*<div class="item active ">
+                    <img src="data:image/jpeg;base64,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" width="1100" height="500">
+                    <div class="carousel-caption">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>*@
+            <div class="item active ">
+                <img src="https://blog.adgager.com/wp-content/uploads/2018/09/razer-blade-15-gallery08-gaming-laptop-1080x635.jpg">
+                <div class="carousel-caption">
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/10-06-2020_1591786368477_1.png">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/banners/s/0/1200-337/marketingbillboard_20201223001409.png/format:webp"> @* yeni resim *@
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/14-12-2020_1607954625357_1.png">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://mcdn01.gittigidiyor.net/ps/mianasayfa_1608927684.jpg?type=homepageV2&index=10">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/21-12-2020_1608551710630_1.png">  @*yeni resim*@
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/03-11-2020_1604405449107_1.png">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/16-10-2020_1602833518048_1.png"> @*yeni resim*@
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/05-06-2020_1602848750261_1.png"> @*yeni resim*@
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/19-12-2019_1585290782853_1.png">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/04-12-2020_1607003671808_1.png">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/08-04-2020_1586327796538_1.png">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://images.hepsiburada.net/assets/storefront/banners/31-05-2018_1539092746676_1.png" width="1100" height="500">
+                <div class="carousel-caption">
+                    <h3> </h3>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="https://www.ortadogugazetesi.com/images/upload/galaxy-fold.jpg">
+                <div class="carousel-caption">
+                </div>
+            </div>
+        </div>
+
+        <a href="#deneme" class="left carousel-control" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+
+        <a href="#deneme" class="right carousel-control" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </div>
+
+
+
+
+
+
+    @*navbar-fixed-top sil düzenlersen sabit kalmasın navbar*@
+    <div class="navbar navbar-inverse " style="margin-left:-5px;margin-right:-5px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                @Html.ActionLink("HepsiAli'de", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "font-size:30px" })
+            </div>  @*siyah balık burayı düzenle*@
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*Ana katagoriler Butonları olacak*@
+                    @Html.Action("GetMenu", "Home")  @*GetMenu de tanımlanan kategoriler*@
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="color:white;">
+
+                    @{
+                        if (Session["LoginUser"] == null)
+                        {
+                            <ul class="nav navbar-nav" style="margin-top: 8px">
+                                <a href="/Admin/AdminLogin/Index" class="btn btn-info" style=" text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Yönetici Paneli&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                <a href="/Uye-giris" style=" text-decoration: none;"><span class="glyphicon glyphicon-log-in"></span> Üye Giriş</a>
+                                <a href="/Uye-Kayit" style=" text-decoration: none;"><span class="glyphicon glyphicon-user"></span> Üye Kayıt</a>
+
+                            </ul>
+
+                        }
+                        else
+                        {
+
+                            var usr = Session["LoginUser"] as And.Eticaret.Core.Model.Entity.User;
+
+                            //Üye giriş yapılmışsa
+                            <p>
+                                <div class="dropdown show" style="color:white;margin-top:-10px;margin-bottom:-10px">
+                                    <a class="btn  dropdown-toggle fa fa-user-ninja" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                                        <br />
+                                        <b>@usr.Name @usr.LastName</b> <br />
+                                        <small>  @usr.Email</small>
+
+                                        <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownabuton">
+                                        <a href="/Sepetim" style=" text-decoration: none;font-size:12px;font-weight:bold" class="button  dropdown-item">
+                                            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' stroke='%23484848' fill='none'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M19.545 20.773H8.723c-.799 0-1.48-.576-1.614-1.363L4.232 2.501A1.637 1.637 0 002.62 1.14H1.545M17.5 23.227a.41.41 0 100 .818.41.41 0 000-.818m-8.182 0a.41.41 0 100 .818.41.41 0 000-.818'/%3E%3Cpath d='M6.506 15.864h13.168a3.273 3.273 0 003.175-2.479l1.582-6.327a.818.818 0 00-.795-1.017h-18.8'/%3E%3C/g%3E%3C/svg%3E" style="color:rgb(255, 96, 0)" />
+
+                                            Sepetim
+                                        </a>
+                                        <a href="/Siparislerim" style=" text-decoration: none;font-size:12px;font-weight:bold" class="button dropdown-item">
+                                            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='26' stroke='%23484848' fill='none'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' stroke-width='2' transform='translate(1 1)'%3E%3Crect width='21' height='16.5' x='.5' y='6.75' rx='1.5'/%3E%3Cpath d='M21.3 7.5l-2.4-5.859A1.5 1.5 0 0017.526.75H4.475a1.5 1.5 0 00-1.375.891L.7 7.5M11 6.75v-6m2.25 18h4.5'/%3E%3C/g%3E%3C/svg%3E" style="color:rgb(255, 96, 0)" />
+
+                                            Siparişlerim
+                                        </a>
+                                        @Html.ActionLink(" Oturum Kapat", "Cikis", new { }, new { @class = "button dropdown-item fa fa-sign-out-alt", style = "text-decoration: none;" })
+                                    </div>
+                                </div>
+
+
+
+
+                                @*<li class="nav-item dropdown" style="list-style-type:none;margin-top:-20px;" id="dropdonwdısbosluk">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop" href="#" style="text-decoration:none">
+                                            <b>Hesabım</b> <br />
+                                            <small> @usr.Name @usr.LastName</small>
+
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a href="/Sepetim" style=" text-decoration: none;font-size:12px;font-weight:bold" class="button dropdown-item">
+                                                <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' stroke='%23484848' fill='none'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M19.545 20.773H8.723c-.799 0-1.48-.576-1.614-1.363L4.232 2.501A1.637 1.637 0 002.62 1.14H1.545M17.5 23.227a.41.41 0 100 .818.41.41 0 000-.818m-8.182 0a.41.41 0 100 .818.41.41 0 000-.818'/%3E%3Cpath d='M6.506 15.864h13.168a3.273 3.273 0 003.175-2.479l1.582-6.327a.818.818 0 00-.795-1.017h-18.8'/%3E%3C/g%3E%3C/svg%3E" style="color:rgb(255, 96, 0)" />
+
+                                                Sepetim
+                                            </a>
+
+                                            <a href="/Siparislerim" style=" text-decoration: none;font-size:12px;font-weight:bold" class="button dropdown-item">
+                                                <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='26' stroke='%23484848' fill='none'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' stroke-width='2' transform='translate(1 1)'%3E%3Crect width='21' height='16.5' x='.5' y='6.75' rx='1.5'/%3E%3Cpath d='M21.3 7.5l-2.4-5.859A1.5 1.5 0 0017.526.75H4.475a1.5 1.5 0 00-1.375.891L.7 7.5M11 6.75v-6m2.25 18h4.5'/%3E%3C/g%3E%3C/svg%3E" style="color:rgb(255, 96, 0)" />
+
+                                                Siparişlerim
+                                            </a>
+                                           @Html.ActionLink("Oturum Kapat", "Cikis", new { }, new { @class = "button dropdown-item", style = "text-decoration: none;" })
+                                        </div>
+                                    </li>*@
+
+
+
+
+
+
+                                @*<b style="text-align:center;margin-left:55px">Merhaba @usr.Name @usr.LastName</b>   <br />
+                                    <a href="/Sepetim" style=" text-decoration: none;font-size:12px;font-weight:bold" class="button">
+                                        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' stroke='%23484848' fill='none'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M19.545 20.773H8.723c-.799 0-1.48-.576-1.614-1.363L4.232 2.501A1.637 1.637 0 002.62 1.14H1.545M17.5 23.227a.41.41 0 100 .818.41.41 0 000-.818m-8.182 0a.41.41 0 100 .818.41.41 0 000-.818'/%3E%3Cpath d='M6.506 15.864h13.168a3.273 3.273 0 003.175-2.479l1.582-6.327a.818.818 0 00-.795-1.017h-18.8'/%3E%3C/g%3E%3C/svg%3E" style="color:rgb(255, 96, 0)" />
+
+                                        Sepetim
+                                    </a>
+                                    <a href="/Siparislerim" style=" text-decoration: none;font-size:12px;font-weight:bold" class="button">
+                                        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='26' stroke='%23484848' fill='none'%3E%3Cg stroke-linecap='round' stroke-linejoin='round' stroke-width='2' transform='translate(1 1)'%3E%3Crect width='21' height='16.5' x='.5' y='6.75' rx='1.5'/%3E%3Cpath d='M21.3 7.5l-2.4-5.859A1.5 1.5 0 0017.526.75H4.475a1.5 1.5 0 00-1.375.891L.7 7.5M11 6.75v-6m2.25 18h4.5'/%3E%3C/g%3E%3C/svg%3E" style="color:rgb(255, 96, 0)" />
+
+                                        Siparişlerim
+                                    </a>
+                                    @Html.ActionLink("Oturum Kapat", "Cikis")*@
+
+                            </p>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content" style="background-color:white;margin-top:-10px;margin-bottom:10px">
+        @RenderBody()
+        <hr style="border-width: 5px" />
+    </div>
+    <footer class=" w3-center w3-black w3-padding-12  w3-hover-opacity-off" style="margin-bottom:-50px">
+        Beni Soyal Medya'dan takip edin
+        <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/alisarii41" target="_blank"><i class="fa fa-facebook w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/alisari.41/" target="_blank"> <i class="fa fa-instagram w3-hover-opacity">  </i></a>
+            <a href="#"> <i class="fa fa-snapchat w3-hover-opacity"></i></a>
+            <a href="mailto:ali41292941@gmail.com" target="_blank"><i class="fa fa-google-plus w3-hover-opacity"></i></a>
+            <a href="#"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+            <a href="https://www.youtube.com/channel/UCJIja20D3OFI6Hd05J-CgmQ?view_as=subscriber" target="_blank"> <i class="fa fa-youtube w3-hover-opacity"></i></a>
+        </div>
+        Ali SARI
+        <br /><br />
+    </footer>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("script", false)  @*false yazmazsak her sayfaya RenderSection eklemek zorunda kalırız*@
+    <style>
+        .body-content {
+            border: 2px solid white;
+            border-radius: 10px 10px 10px 10px; /*etrafını oval yapma*/
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .button {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+
+            .button:hover {
+                color: rgba(0, 0, 0, 0.35);
+            }
+
+        #dropdonwdısbosluk:hover {
+            color: white;
+            opacity: 1;
+        }
+
+        .dropdown-toggle:hover {
+            color: red
+        }
+
+        .dropdown-toggle {
+            color: white
+        }
+
+        #dropdownabuton:hover {
+            color: red
+        }
+
+        a:hover {
+            color: rgba(238, 238, 238, 0.35)
+        }
+    </style>
+</body>
+</html>

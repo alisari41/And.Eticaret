@@ -1,0 +1,129 @@
+﻿@model IEnumerable<And.Eticaret.Core.Model.Entity.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kategori</h2>
+
+<p>
+    @Html.ActionLink(" Yeni Kategori", "Create", new { }, new { @class = "btn btn-danger fa fa-list-alt " })
+</p>
+<div class="table-responsive">
+    <table class="table table-hover table-sm table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentID)
+            </th>
+            <th>
+                Kategori Adı
+                @*@Html.DisplayNameFor(model => model.Name)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                Oluşturma Tarihi
+                @*@Html.DisplayNameFor(model => model.CreateDate)*@
+            </th>
+            <th>
+                Oluşturan Kullanıcı Id
+                @*@Html.DisplayNameFor(model => model.CreateUserID)*@
+            </th>
+            <th>
+                Güncelleme Tarihi
+                @*@Html.DisplayNameFor(model => model.UpdateDate)*@
+            </th>
+            <th>
+                Güncelleyen Kullanıcı Id
+                @*@Html.DisplayNameFor(model => model.UpdateUserID)*@
+            </th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+            <th>Sil</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateUserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateUserID)
+                </td>
+                <td>
+                    @Html.ActionLink(" Güncelle", "Edit", new { id = item.ID }, new { @class = "btn btn-default fas fa-edit guncellemebuton", style = "border: 2px solid green;" })
+                </td>
+                <td>
+                    @Html.ActionLink(" Detay", "Details", new { id = item.ID }, new { @class = "btn  btn-default fas fa-info detaylamabuton", style = "border: 2px solid #39ded8;" })
+                </td>
+                <td>
+                    @Html.ActionLink(" Sil", "Delete", new { id = item.ID }, new { @class = "btn btn-default fas fa-trash-alt silmebuton", style = "border: 2px solid red;" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: green;
+    }
+
+        .guncellemebuton:hover {
+            background-color: green;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

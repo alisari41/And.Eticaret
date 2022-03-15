@@ -1,0 +1,107 @@
+﻿@model And.Eticaret.Core.Model.Entity.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<h2>Kategori Detay</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal ">
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.ParentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.Name)*@Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@ Oluşturma Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+</div>
+<p style="margin-left:50px">
+    @Html.ActionLink(" Geri Dön", "Index", new { }, new { @class = "btn btn-default fa fa-backward detaylamabuton", style = "margin-left:5px;border: 2px solid red;" })
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.ID }, new { @class = "btn btn-default fas fa-edit guncellemebuton", style = "margin-left:5px;border: 2px solid green;" })
+</p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #44c20e;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #ff0000;
+            color: white;
+        }
+</style>

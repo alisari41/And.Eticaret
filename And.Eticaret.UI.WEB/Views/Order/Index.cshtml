@@ -1,0 +1,86 @@
+﻿@model IEnumerable<And.Eticaret.Core.Model.Entity.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="font-weight: bold; ">Siparişlerim</h2>
+
+<br />
+<div class="table-responsive">
+    <table class="table  table-hover table-bordered ">
+        <tr class="alert-danger">
+
+            <th>
+                Sipariş No
+            </th>
+            <th>
+                Durum
+            </th>
+            <th>
+                Toplam Ürün Fiyatı
+            </th>
+            <th>
+                Tarihi
+            </th>
+            <th>
+                Sipariş Detayı
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Sipariş Detayı", "Detail", new { id = item.ID })*@
+                    <a href="/Order/Detail/@item.ID" class="" style="text-decoration:none;"><i class="fas fa-calendar-week" style="color: red; font-size: 27px;"></i></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

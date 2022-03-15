@@ -1,0 +1,115 @@
+﻿@model And.Eticaret.Core.Model.Entity.Product
+@{
+    ViewBag.Title = "Ürün Detayı";
+    var isLogin = (bool)ViewBag.IsLogin;
+}
+<div class="container"><br />
+    <h2>Ürün Detayı</h2> <br />
+    <div class="productBox">
+        <p class="title"> <b>@Model.Name</b>  </p> <br />
+        <img src="@Model.ImageUrl" style=" width: 550px; height: 650px;" />
+        <br /><br />
+        <p class="marka">
+            @Model.Brand
+        </p>
+        <p class="para">
+            @Model.Price.ToString("##,## ₺")
+        </p>
+        <p class="aciklama">
+            @Model.Description
+        </p><br /><br />
+        @{
+            if (isLogin)
+            {
+                <a href="#" data-pID="@Model.ID" class="btn btn-default addBasket detaylamabuton" style = "border: 2px solid #39ded8;"><i class="fas fa-shopping-basket"></i> Sepete Ekle</a>
+
+            }
+        }
+    </div>
+
+</div>
+<div id="andModal" title="Teşekkürler :)">
+    Ürününüz Sepete Eklenmiştir <br />
+    <a href="/sepetim" class="btn btn-success ">Sepete git</a>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+    .title {
+        color: #3c9573;
+        font-size: 32px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    img {
+    }
+
+    .marka {
+        font-size: 32px;
+        font-family: 'Copperplate Gothic';
+        font-style: unset;
+    }
+
+    .para {
+        font-size: 32px;
+        font-family: Copperplate Gothic Bold;
+    }
+  
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+</style>
+@section script{
+    <script type="text/javascript">
+
+        $(function () {
+            $("#andModal").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".addBasket").on("click", function () {
+                var pid = $(this).attr("data-pID");
+                $.post("/Basket/AddProduct?productID=" + pid + "&quantity=1", function (data) {
+                    $("#andModal").dialog("open");
+                });
+                //var pid = $(this).attr("data-pID");
+                //$.post("/Basket/AddProduct?productID=" + pid + "&quantity=1", function (data) {
+                //});
+                return false;
+            });
+        });
+
+
+    </script>
+}

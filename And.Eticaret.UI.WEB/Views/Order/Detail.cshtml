@@ -1,0 +1,88 @@
+﻿@model And.Eticaret.Core.Model.Entity.Order
+@{
+    ViewBag.Title = "Sipariş Detayı";
+}
+
+<h2>@Model.ID Nolu Siparişinizin Durumu : @Model.Status.Name </h2>
+<hr />
+<b style="color:#7e1a7c">Banka Bilgileri</b>
+<br />
+<br />
+<table class="table table-hover table-sm table-responsive">
+    <tr>
+        <th>Banka</th>
+        <td>Ziraat</td>
+    </tr>
+    <tr>
+        <th>İban</th>
+        <td>TR71 0001 0016 7679 4173 1850 03</td>
+    </tr>
+    <tr>
+        <th>Alıcı Adı</th>
+        <td> Ali SARI</td>
+    </tr>
+    <tr>
+        <th>Firma Bilgileri</th>
+        <td>HepsiAli'de</td>
+    </tr>
+</table>
+@{
+    if (Model.StatusID == 1)
+    {//ödeme yapmamışsa çıksın
+        <a href="/Order/Pay?id=@Model.ID" class="btn btn-success">Ödeme Yaptım</a>
+        <hr />
+    }
+    else
+    {
+        <hr />
+        <br />
+        <br />
+    }
+}
+
+
+
+<b style="color:#7e1a7c">Sipariş Bilgileri</b>
+<br />
+<br />
+
+<table class="table table-hover table-sm table-responsive">
+    <tr>
+        <th>Toplam</th>
+        <td>@Model.TotalPrice.ToString("##,## ₺")</td>
+    </tr>
+    <tr>
+        <th>Ürünler Toplamı</th>
+        <td>@Model.TotalProductPrice.ToString("##,## ₺")</td>
+    </tr>
+    <tr>
+        <th>İndirim Toplamı</th>
+        <td>@Model.TotalDiscount.ToString("##,## ₺")</td>
+    </tr>
+    <tr>
+        <th>Vergi Toplamı</th>
+        <td>@Model.TotalTaxPrice.ToString("##,## ₺")</td>
+    </tr>
+</table>
+
+<hr />
+<b style="color:#7e1a7c">Ürünler</b>
+<br />
+<br />
+<table class="table table-bordered table-hover table-sm table-responsive" style="background-color:white">
+    <tr style="background-color:black;color:white">
+        <th class="table-danger">Ürün</th>
+        <th class="table-danger">Adet</th>
+    </tr>
+    @{
+        foreach (var item in Model.OrderProducts)
+        {
+            var p = new And.Eticaret.Core.Model.AndDB().Products.Where(x => x.ID == item.ProductID).FirstOrDefault();
+            <tr>
+                <td>@p.Name</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    }
+
+</table>

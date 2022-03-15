@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "And.Eticaret.UI.WEB", "And.Eticaret.UI.WEB\And.Eticaret.UI.WEB.csproj", "{780DA95F-F525-49F4-A97C-C87DA58AE9CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "And.Eticaret.Core.Model", "And.Eticaret.Core.Model\And.Eticaret.Core.Model.csproj", "{077B73B7-D8CB-4779-932D-41B24D5A765F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{780DA95F-F525-49F4-A97C-C87DA58AE9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{780DA95F-F525-49F4-A97C-C87DA58AE9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{780DA95F-F525-49F4-A97C-C87DA58AE9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{780DA95F-F525-49F4-A97C-C87DA58AE9CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077B73B7-D8CB-4779-932D-41B24D5A765F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077B73B7-D8CB-4779-932D-41B24D5A765F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077B73B7-D8CB-4779-932D-41B24D5A765F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077B73B7-D8CB-4779-932D-41B24D5A765F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1F92750-C78C-4225-81FA-1228F5312B18}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,197 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<And.Eticaret.Core.Model.Entity.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2 style="margin-bottom:15px">Ürünler</h2>
+
+<p>
+    @Html.ActionLink(" Yeni Ürün Ekle", "Create", new { }, new { @class = "btn btn-default fas fa-cart-plus eklemebuton", style= "border: 2px solid #c01e1e;;" })
+</p>
+
+<div align="center">
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa })
+    , new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                Kategori Adı
+                @*@Html.DisplayNameFor(model => model.Category.Name)*@
+            </th>
+            <th>
+                Model
+                @*@Html.DisplayNameFor(model => model.Name)*@
+            </th>
+            <th>
+                Marka
+                @*@Html.DisplayNameFor(model => model.Brand)*@
+            </th>
+            <th>
+                ImageUrl
+                @*@Html.DisplayNameFor(model => model.ImageUrl)*@
+            </th>
+            <th>
+                Açıklama
+                @*@Html.DisplayNameFor(model => model.Description)*@
+            </th>
+            <th>
+                Fiyat
+                @*@Html.DisplayNameFor(model => model.Price)*@
+            </th>
+            <th>
+                Vergi
+                @*@Html.DisplayNameFor(model => model.Tax)*@
+            </th>
+            <th>
+                İndirim
+                @*@Html.DisplayNameFor(model => model.Discount)*@
+            </th>
+            <th>
+                Stok
+                @*@Html.DisplayNameFor(model => model.Stock)*@
+            </th>
+            <th>
+                IsActive
+                @*@Html.DisplayNameFor(model => model.IsActive)*@
+            </th>
+            <th>
+                Oluşturma Tarihi
+                @*@Html.DisplayNameFor(model => model.CreateDate)*@
+            </th>
+            <th>
+                CreateUserID
+                @*@Html.DisplayNameFor(model => model.CreateUserID)*@
+            </th>
+            <th>
+                Güncelleme Tarihi
+                @*@Html.DisplayNameFor(model => model.UpdateDate)*@
+            </th>
+            <th>
+                UpdateUserID
+                @*@Html.DisplayNameFor(model => model.UpdateUserID)*@
+            </th>
+            <th>Güncelle</th>
+            <th>Detay</th>
+            <th>Sil</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateUserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdateUserID)
+                </td>
+                <td>
+                    @Html.ActionLink(" Güncelle", "Edit", new { id = item.ID }, new { @class = "btn btn-default fas fa-edit   guncellemebuton", style = "border: 2px solid green;" })
+                </td>
+                <td>
+                    @Html.ActionLink(" Detay  ", "Details", new { id = item.ID }, new { @class = "btn  btn-default fas fa-info detaylamabuton", style = "border: 2px solid #39ded8;" })
+                </td>
+                <td>
+                    @Html.ActionLink(" SİL", "Delete", new { id = item.ID }, new { @class = "btn btn-default fas fa-trash-alt silmebuton", style = "border: 2px solid red;" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<div class="row"></div>
+<br />
+<br />
+<br />
+<div align="center">
+    @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa })
+    , new PagedListRenderOptions { LinkToFirstPageFormat = "<< İlk", LinkToPreviousPageFormat = "< Önceki", LinkToNextPageFormat = "Sonraki >", LinkToLastPageFormat = "Son >>" })
+</div>
+<br />
+<br />
+<style>
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: green;
+    }
+
+        .guncellemebuton:hover {
+            background-color: green;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+    .eklemebuton {
+        -webkit-transition-duration: 0.4s;
+        color: white;
+        background-color: #c01e1e;
+        transition-duration: 0.4s;
+    }
+
+        .eklemebuton:hover {
+            background-color: white;
+            color: #c01e1e;
+        }
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

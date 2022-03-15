@@ -1,0 +1,49 @@
+﻿@model IEnumerable<And.Eticaret.Core.Model.Entity.Basket>
+
+<br />
+<br /> @*  SEPET    *@
+<table class="table table-bordered table-hover table-sm table-responsive " style="background-color:white">
+    <tr class="table-danger table-hover " style="background-color:black;color:white">
+
+
+        <th  style="font-weight:bold;font-size:18px;">Ürün</th>
+        <th  style="font-weight:bold;font-size:18px;">Adet</th>
+        <th  style="font-weight:bold;font-size:18px;">Sil</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="font-weight:bold;font-size:16px;">
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td style="font-weight:bold;font-size:16px;">
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @*@Html.ActionLink("Sil", "Delete", new { id = item.ID }, new { name = "Delete", style = "color : red;"})*@
+                <a href="/Basket/Delete/@item.ID" class="" style="text-decoration:none;"><i class="far fa-trash-alt" style="color:red;font-size:27px;"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Siparisver" class="btn btn-primary"><i class="fa fa-credit-card"></i> Satın Al</a>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

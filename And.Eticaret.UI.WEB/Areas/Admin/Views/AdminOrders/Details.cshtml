@@ -1,0 +1,146 @@
+﻿@model And.Eticaret.Core.Model.Entity.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detay</h2>
+
+<div>
+    <h4>Sipariş</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.StatusID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Kullanıcı İd
+            @*@Html.DisplayNameFor(model => model.UserID)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        @*<dt style="margin-bottom:5px">
+                @Html.DisplayNameFor(model => model.User)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserAddress)
+            </dd>*@
+
+        <dt style="margin-bottom:5px">
+            Toplam Ürün Fiyatı
+            @*@Html.DisplayNameFor(model => model.TotalProductPrice)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalProductPrice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Toplam Vergi
+            @*@Html.DisplayNameFor(model => model.TotalTaxPrice)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTaxPrice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Toplam indirim
+            @*@Html.DisplayNameFor(model => model.TotalDiscount)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDiscount)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Toplam Fiyat
+            @*@Html.DisplayNameFor(model => model.TotalPrice)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Oluşturma Tarihi
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px;">
+            OluşturanID
+            @*@Html.DisplayNameFor(model => model.CreateUserID)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+</div>
+<br />
+<p style="margin-left:75px">
+
+    @Html.ActionLink(" Geri Dön", "Index", new { }, new { @class = "btn  fas fa-backward detaylamabuton", style = "border: 2px solid red;" })
+    @Html.ActionLink(" Güncelle", "Edit", new { id = Model.ID }, new { @class = "btn  fas fa-edit guncellemebuton", style = "border: 2px solid green;" })
+</p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: #39ded8;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #1e4e4c;
+            color: white;
+        }
+
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: green;
+    }
+
+        .guncellemebuton:hover {
+            background-color: green;
+            color: white;
+        }
+</style>

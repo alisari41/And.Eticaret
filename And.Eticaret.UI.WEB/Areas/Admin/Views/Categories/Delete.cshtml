@@ -1,0 +1,112 @@
+﻿@model And.Eticaret.Core.Model.Entity.Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<br />
+<h3 style="font-weight:bold">Bunu silmek istediğinizden emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.ParentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.Name)*@Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@ Oluşturma Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.UpdateDate)*@ Güncelleme Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-1 col-md-11">
+
+            <button type="submit" value="Delete" class="btn btn-default silmebuton" style="border: 3px solid red;margin-left:55px">
+                <span class='fa-stack '>
+                    <i class='fas fa-list fa-stack-1x'></i>
+                    <i class='fas fa-ban fa-stack-2x'></i>
+                </span>Kategori SİL
+            </button>
+        </div>
+    }
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+        background-color: white
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

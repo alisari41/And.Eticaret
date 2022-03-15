@@ -1,0 +1,153 @@
+﻿@model And.Eticaret.Core.Model.Entity.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Üye Detayları</h2>
+
+<div>
+    @*<h4>User</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="margin-bottom:5px">
+            Adı
+            @*@Html.DisplayNameFor(model => model.Name)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Soyadı
+            @*@Html.DisplayNameFor(model => model.LastName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Telefon Numarası
+            @*@Html.DisplayNameFor(model => model.Telephone)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Şifre
+            @*@Html.DisplayNameFor(model => model.Password)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.TCKN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TCKN)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.IsActice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.IsAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAdmin)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Oluşturma Tarihi
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Güncelleme Tarihi
+            @*@Html.DisplayNameFor(model => model.UpdateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+</div>
+<p style="margin-left:55px;">
+    @Html.ActionLink(" Geri Dön", "Index", new { }, new { @class = "btn btn-default fa fa-backward detaylamabuton", style = "margin-left:5px;border: 2px solid red;" })
+    @Html.ActionLink(" Güncelle", "Edit", new { id = Model.ID }, new { @class = "btn btn-default fas fa-edit guncellemebuton", style = "margin-left:5px;border: 2px solid green;" })
+</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+        .guncellemebuton:hover {
+            background-color: #44c20e;
+            color: white;
+        }
+
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: #ff0000;
+            color: white;
+        }
+</style>

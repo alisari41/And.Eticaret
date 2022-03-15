@@ -1,0 +1,146 @@
+﻿@model And.Eticaret.Core.Model.Entity.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3 style="font-weight:bold">
+    Bunu silmek istediğinizden emin misiniz?
+</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.StatusID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Kullanıcı İd
+            @*@Html.DisplayNameFor(model => model.UserID)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        @*<dt style="margin-bottom:5px">
+                @Html.DisplayNameFor(model => model.User)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserAddress)
+            </dd>*@
+
+        <dt style="margin-bottom:5px">
+            Toplam Ürün Fiyatı
+            @*@Html.DisplayNameFor(model => model.TotalProductPrice)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalProductPrice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Toplam Vergi
+            @*@Html.DisplayNameFor(model => model.TotalTaxPrice)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalTaxPrice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Toplam indirim
+            @*@Html.DisplayNameFor(model => model.TotalDiscount)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDiscount)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Toplam Fiyat
+            @*@Html.DisplayNameFor(model => model.TotalPrice)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Oluşturma Tarihi
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px;">
+            @*OluşturanID*@
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Güncelleme Tarihi
+            @*@Html.DisplayNameFor(model => model.UpdateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" value="SİL" class="btn   fa fa-trash-alt col-sm-2 silmebuton" style=" height: 34px;margin-left:175px;border: 2px solid red;">&nbsp;&nbsp; SİL</button>
+        </div>
+    }
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+        background-color: white
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

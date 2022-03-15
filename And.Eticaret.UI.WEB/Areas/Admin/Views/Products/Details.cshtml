@@ -1,0 +1,165 @@
+﻿@model And.Eticaret.Core.Model.Entity.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Ürün Detayları</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>*@
+
+        <dt style="margin-bottom:5px">
+            Model
+            @*@Html.DisplayNameFor(model => model.Name)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Marka
+            @*@Html.DisplayNameFor(model => model.Brand)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Açıklama
+            @*@Html.DisplayNameFor(model => model.Description)*@
+        </dt>
+
+        <dd style="margin-bottom:5px">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Fiyat
+            @*@Html.DisplayNameFor(model => model.Price)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Vergi
+            @*@Html.DisplayNameFor(model => model.Tax)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            İndirim
+            @*@Html.DisplayNameFor(model => model.Discount)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Ürün Adeti
+            @*@Html.DisplayNameFor(model => model.Stock)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Oluşturma Tarihi
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*Oluşturan Kullanıcının ID'si*@
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+</div>
+<br />
+<p>
+
+    @Html.ActionLink("Geri Dön", "Index", new { }, new { @class = "btn btn-default fas fa-backward detaylamabuton", style = "border: 2px solid pink;margin-left:75px" })
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.ID }, new { @class = "btn btn-default fas fa-edit guncellemebuton", style = "border: 2px solid green;margin-left:5px" }) 
+</p>
+<br /><br /><br />
+<br /><br /><br />  
+<style>
+    .detaylamabuton {
+        -webkit-transition-duration: 0.4s;
+        color: pink;
+        transition-duration: 0.4s;
+    }
+
+        .detaylamabuton:hover {
+            background-color: pink;
+            color: white;
+        }
+
+    .guncellemebuton {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        color: green;
+    }
+
+        .guncellemebuton:hover {
+            background-color: green;
+            color: white;
+        }
+</style>

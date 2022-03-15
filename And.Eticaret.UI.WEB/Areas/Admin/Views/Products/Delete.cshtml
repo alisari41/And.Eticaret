@@ -1,0 +1,156 @@
+﻿@model And.Eticaret.Core.Model.Entity.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Bunu silmek istediğinizden emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>*@
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.Name)*@Model
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @*@Html.DisplayNameFor(model => model.Brand)*@Marka
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Açıklama
+            @*@Html.DisplayNameFor(model => model.Description)*@
+        </dt>
+
+        <dd  style="margin-bottom:5px">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Fiyat
+            @*@Html.DisplayNameFor(model => model.Price)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Vergi
+            @*@Html.DisplayNameFor(model => model.Tax)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            İndirim
+            @*@Html.DisplayNameFor(model => model.Discount)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Ürün Adeti
+            @*@Html.DisplayNameFor(model => model.Stock)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            Oluşturma Tarihi
+            @*@Html.DisplayNameFor(model => model.CreateDate)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.CreateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateUserID)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+
+        <dt style="margin-bottom:5px">
+            @Html.DisplayNameFor(model => model.UpdateUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateUserID)
+        </dd>
+
+    </dl>
+    <br />
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-default col-sm-2 silmebuton" style="margin-left:170px;border: 3px solid red;font-weight:bold;font-size:18px"><i class="fas fa-trash-alt "></i> &nbsp;SİL</button>
+        </div>
+    }<br />
+</div>
+<br /><br /><br />
+<br /><br /><br />  
+<style>
+
+    .silmebuton {
+        -webkit-transition-duration: 0.4s;
+        color: red;
+        transition-duration: 0.4s;
+        background-color: white
+    }
+
+        .silmebuton:hover {
+            background-color: red;
+            color: white;
+        }
+</style>
